@@ -24,7 +24,15 @@ let currentIndex = 0;
 function showLightbox(group, index) {
   currentGroup = group;
   currentIndex = index;
+  
+  lightboxImg.classList.remove('show'); // Start hidden
+  setTimeout(() => {
   lightboxImg.src = currentGroup[currentIndex].src;
+  lightboxImg.onload = () => {
+    lightboxImg.classList.add('show'); // Fade in after load
+  };
+}, 100); // Slight delay to trigger transition
+
   lightbox.classList.remove('hidden');
 
   // Show/hide arrows based on group size
@@ -52,12 +60,24 @@ galleryImages.forEach((img, index) => {
 // Navigation
 leftArrow.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+  lightboxImg.classList.remove('show'); // Start hidden
+  setTimeout(() => {
   lightboxImg.src = currentGroup[currentIndex].src;
+  lightboxImg.onload = () => {
+    lightboxImg.classList.add('show'); // Fade in after load
+  };
+}, 100); // Slight delay to trigger transition
 });
 
 rightArrow.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % currentGroup.length;
+  lightboxImg.classList.remove('show'); // Start hidden
+  setTimeout(() => {
   lightboxImg.src = currentGroup[currentIndex].src;
+  lightboxImg.onload = () => {
+    lightboxImg.classList.add('show'); // Fade in after load
+  };
+}, 100); // Slight delay to trigger transition
 });
 
 closeBtn.addEventListener('click', () => {
