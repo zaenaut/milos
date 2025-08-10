@@ -12,16 +12,45 @@
   <h1>Hello, world!</h1>
   <p>This is your first website, Milos.</p>
 
-  <div class="image-container">
-    <img src="images/milos.jpg" alt="Milos smiling" width="300">
-    <img src="https://picsum.photos/400/300" alt="Random scenic image" width="400">
+<div class="image-row">
+  <div class="image-frame">
+    <img src="images/milos.jpg" alt="Uploaded image 1" class="clickable-image">
   </div>
-
+  <div class="image-frame">
+    <img src="images/milos2.jpg" alt="Uploaded image 2" class="clickable-image">
+  </div>
+</div>
   <div class="button-container">
     <button id="colorButton">Change Background</button>
     <button id="darkModeButton">Toggle Dark Mode</button>
   </div>
 
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Fullscreen image">
+    <div class="nav-arrow left">&#10094;</div>
+    <div class="nav-arrow right">&#10095;</div>
+  </div>
+<!-- Gallery Section -->
+<section class="gallery">
+  <div class="gallery-item">
+    <img src="images/design1.jpg" alt="Design 1" class="clickable-image">
+    <figcaption>Design 1</figcaption>
+  </div>
+  <div class="gallery-item">
+    <img src="images/design2.jpg" alt="Design 2" class="clickable-image">
+    <figcaption>Design 2</figcaption>
+  </div>
+  <div class="gallery-item">
+    <img src="images/design3.jpg" alt="Design 3" class="clickable-image">
+    <figcaption>Design 3</figcaption>
+  </div>
+  <div class="gallery-item">
+  <img src="images/design4.jpg" alt="Design 4" class="clickable-image">
+  <figcaption>Design 4</figcaption>
+  </div>
+<!-- Add more items as needed -->
+</section>
   <script src="script.js"></script>
 </body>
 </html>
